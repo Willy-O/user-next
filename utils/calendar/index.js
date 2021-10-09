@@ -1,5 +1,3 @@
-import '../../assets/calendar/lib/main.min.css'
-
 export default function MyCalendar () {
   const calendarEl = document.getElementById('calendar')
   // Get buttonText depend on Window size

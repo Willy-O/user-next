@@ -4,10 +4,145 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Vite App</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script defer src="./assets/calendar/lib/main.min.js"></script>
+    <script defer type="module" src="/main.js"></script>
+
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <header class="container-fluet">
+      <div class="banner bg-gold">
+        <div class="logo">
+          <img src="./assets/img/escuela.png" alt="Escuela">
+          <span>La escuela</span>
+        </div>
+        <div class="userOptions">
+          <img src="./assets/img/user-icon.png" alt="Icono de usuario">
+          <div class="menu-container">
+            <input type="checkbox" class="menu" name="menu" id="menu">
+            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-arrow" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z"></path></svg>
+            <ul>
+              <li class="list bg-gold"><a href="#" class="config">Configuración</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluet container-user-config is-hidden is-visuallyHidden">
+      <div class="user-config">
+        <span class="close-modal">&times;</span>
+        <form action="#">
+          <label for="photo" class="container-photo">
+            <img src="/assets/img/user-icon.png" alt="user-icon" class="photo">
+            <span>Seleccione la imagen para cambiarla</span>
+            <input type="file" name="photo" id="photo">
+          </label>
+          <label for="name">
+            <span>Nombre de usuario</span>
+            <input type="text" placeholder="Nombre de usuario" id="name">
+          </label>
+          <label for="password">
+            <span>Contraseña</span>
+            <input type="password" placeholder="********" id="password">
+          </label>
+          <label for="password-confirm">
+            <span>Escriba de nuevo su contraseña</span>
+            <input type="password" placeholder="********" id="password-confirm">
+          </label>
+          <label for="email">
+            <span>Correo electronico</span>
+            <input type="email" placeholder="su_correo@dominio.com" id="email">
+          </label>
+          <button class="btn btn-primary save-data">Guardar cambios</button>
+        </form>
+      </div>
+    </div>
+
+    <section class="container-fluet">
+      <div class="container-carousel-text">
+        <div class="texto">
+          <h2>Cursos adquiridos</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti provident perspiciatis facere, optio doloribus assumenda quas laudantium? Earum nisi quaerat quasi officia quos, sunt animi a dolores ratione recusandae minima.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti provident perspiciatis facere, optio doloribus assumenda quas laudantium? Earum nisi quaerat quasi officia quos, sunt animi a dolores ratione recusandae minima.</p>
+        </div>
+        <div class="container carousel-container">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>
+  
+              </div>
+              <div class="carousel-item">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">Second slide</text></svg>
+              </div>
+              <div class="carousel-item">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">Third slide</text></svg>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-table-text">
+        <div class="tab">
+          <table>
+            <tr>
+              <th>Compra</th>
+              <th>Monto</th>
+              <th>Metodo de pago</th>
+              <th>Id de compra</th>
+            </tr>
+            <tr>
+              <td>Curso de Python</td>
+              <td>20$</td>
+              <td>Paypal</td>
+              <td>#P20P</td>
+            </tr>
+            <tr>
+              <td>Curso de JavaScript</td>
+              <td>25$</td>
+              <td>Paypal</td>
+              <td>#J20P</td>
+            </tr>
+            <tr>
+              <td>Curso de Azure</td>
+              <td>14$</td>
+              <td>Paypal</td>
+              <td>#A20P</td>
+            </tr>
+          </table>
+        </div>
+        <div class="texto">
+          <h2>Factura de últimas compras</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti provident perspiciatis facere, optio doloribus assumenda quas laudantium? Earum nisi quaerat quasi officia quos, sunt animi a dolores ratione recusandae minima.</p>
+          <button class="btn btn-golden download">Descargar facturas</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fluet">
+      <div class="container container-calendar">
+        <h2>Próximos eventos</h2>
+        <div id='script-warning'></div>
+        <div id='loading'>loading...</div>
+        <div id='calendar'></div>
+      </div>
+    </section>
   </body>
 </html>

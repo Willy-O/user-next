@@ -1,7 +1,7 @@
 import './style.css'
-import MyCalendar from './components/calendar'
-import createPDF from './components/pdf'
-import userConfig from './components/userConfig'
+import MyCalendar from './utils/calendar'
+import createPDF from './utils/pdf'
+import userConfig from './utils/userConfig'
 
 const $ = selector => document.querySelector(selector)
 

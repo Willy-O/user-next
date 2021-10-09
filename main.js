@@ -1,6 +1,27 @@
 import './style.css'
+import MyCalendar from './components/calendar'
+import createPDF from './components/pdf'
+import userConfig from './components/userConfig'
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+const $ = selector => document.querySelector(selector)
+
+document.addEventListener('DOMContentLoaded', function () {
+  MyCalendar()
+
+  $('.menu').addEventListener('click', (e) => {
+    if (e.target.checked === true) {
+      $('.list').style.display = 'block'
+    } else {
+      $('.list').style.display = 'none'
+    }
+  })
+
+  $('.download').addEventListener('click', () => {
+    createPDF()
+  })
+
+  $('.config').addEventListener('click', (e) => {
+    e.preventDefault()
+    userConfig($)
+  })
+})
